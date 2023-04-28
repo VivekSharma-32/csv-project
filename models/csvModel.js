@@ -1,18 +1,21 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const csvSchema = new mongoose.Schema({
-  filename: {
-    type: String,
-    required: true,
+const csvSchema = new mongoose.Schema(
+  {
+    filename: {
+      type: String,
+      required: true,
+    },
+    header_row: {
+      type: [Object],
+    },
+    data_rows: {
+      type: [Object],
+    },
   },
-  header_row: {
-    type: [Object],
-  },
-  data_rows: {
-    type: [Object],
-  },
-}, {
-  timestamps: true,
-});
+  {
+    timestamps: true,
+  }
+);
 
-module.exports = mongoose.model('CSV', csvSchema);
+module.exports = mongoose.model("CSV", csvSchema);
