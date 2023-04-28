@@ -55,20 +55,17 @@
       <div class="row">
         <div class="col-12">
           <h1>CSV File: <%= fileData.filename %></h1>
-          <input type="text" id="search" placeholder="Search..." />
-          <table class="table">
+          <input
+            type="text"
+            id="search"
+            class="form-control"
+            placeholder="Search..."
+          />
+          <table class="table table-striped">
             <thead>
               <tr>
                 <% fileData.header_row.forEach(function(cell, index) { %>
-                <th>
-                  <%= cell %><button
-                    class="sort"
-                    id="<%= index %>"
-                    data-order="desc"
-                  >
-                    ↓
-                  </button>
-                </th>
+                <th><%= cell %></th>
                 <% }); %>
               </tr>
             </thead>
