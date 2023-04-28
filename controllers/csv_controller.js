@@ -58,7 +58,6 @@ module.exports.upload = async function (req, res) {
         return res.redirect("/");
       });
   } catch (err) {
-    console.log(err);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -96,7 +95,6 @@ module.exports.view = async function (req, res) {
         }
       );
     });
-    console.log(fileData);
 
     res.render("csv_view", {
       fileData,
